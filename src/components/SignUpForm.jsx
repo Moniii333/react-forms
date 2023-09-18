@@ -28,20 +28,24 @@ export default function SignUpForm({ onSignupSuccess }) {
     }
   }
 
+  const storeUserName = user => {
+    setUserName(user.target.value)
+  }
+
   return(
-    <div>
-      <h2>Sign Up</h2>
+    <div className="signupContainer">
+      <h1>Sign Up</h1>
       {error && <p>Uh oh! {error}</p>}
       <form id="sign-up-form"  onSubmit={handleForm}>
         <label id="username" > Username: {' '}
-          <input name="username" placeholder="Username" autoComplete= 'userName' minLength={8} required value={userName} onChange={(e) => setUserName(e.target.value)}/>
+          <input name="username" placeholder="Username" autoComplete= 'userName' minLength={8} required value={userName} onChange={storeUserName}/>
         </label>
         <br></br>
         <label id="password"> Password: {' '}
-          <input name="password" placeholder="Password" type="password" required minLength={8} value={password} onChange={(x) => setPassword(x.target.value)}/>
+          <input name="password" placeholder="••••••••" type="password" required minLength={8} value={password} onChange={(event) => setPassword(event.target.value)}/>
         </label>
         <br></br>
-        <input type="submit" value={'Submit'}></input>
+        <input className="signUpBtn" type="submit" value={'Submit'}></input>
       </form>
     </div>
   )

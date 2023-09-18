@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export default function Authenticate({ passedToken }) {
+export default function Authenticate({ passedToken, userNameData }) {
   const [successMessage, setSuccessMessage] = useState(null)
   const [error, setError] = useState(null)
 
@@ -26,13 +26,22 @@ export default function Authenticate({ passedToken }) {
       setError(error.message)
     }
 }
-  
+
+const randomGenerator = () => {
+  return Math.floor(Math.random() * 36) + 1
+}
+const hours = randomGenerator()
+
   return(
-    <div>
-      <h2>Authenticate</h2>
-      {successMessage && <p className="auth-success"> Welcome!! {successMessage}</p>}
+    <>
+  <h1>Authenticate</h1>
+    <div className="authenticated">
+      {successMessage && <><p className="auth-success"> Welcome Back<span className="username"> {userNameData}</span>, You Are {successMessage}</p>
+        <section className="last-login">{hours} hours since your last login..</section></>
+      }
       {error && <p className="auth-error"> You're not allow in! {error}</p>}
-      <button onClick={handleClick}>Authenticate Token!</button>
     </div>
+    <button onClick={handleClick}>Authenticate Token!</button>
+    </>
   )
 }

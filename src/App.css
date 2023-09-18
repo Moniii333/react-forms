@@ -12,3 +12,53 @@
 .auth-success {
   color: lawngreen;
 }
+
+.username {
+  font-weight: 500;
+  color: gold;
+  font-family: cursive;
+  font-size: 24px;
+}
+
+.signupContainer {
+  display: flex;
+  border: 2px solid lightgoldenrodyellow;
+  height: 25rem;
+  width: 20rem;
+  flex-direction: column;
+  background-image: url('/src/images/leopord.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 5px 10px 9px lightgoldenrodyellow;
+  border-radius: 8px;
+}
+
+input:focus {
+  border: 2px solid cyan;
+  background-color: ivory;
+  color:crimson;
+}
+
+input {
+  margin: 10px;
+  padding: 5px;
+  background: transparent;
+}
+
+::placeholder {
+  color: azure;
+}
+
+.last-login {
+  opacity: .5;
+  color: gold;
+  margin-bottom: 15px;
+}
+
+.authenticated {
+  border: 1px dotted lightslategray;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 10px;
+  box-shadow: 5px 1px 18px lawngreen;
+}
